@@ -1,0 +1,54 @@
+.container {
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: var(--background-color);
+  margin-left: 2vw;
+  margin-top: 4vh;
+  padding: 0px;
+  width: 29.5%;
+}
+
+.title {
+  font-size: 4vh;
+  color: #fff;
+}
+
+/* Media query para tablets */
+@media (max-width: 1024px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2vw;
+    margin-bottom: 1vh;
+    height: 6vh;
+    width: 50%;
+  }
+
+  .title {
+    font-size: 3vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .container {
+    height: 8vh;
+    width: 40%;
+  }
+
+  .title {
+    font-size: 5vh;
+  }
+}
+
+/* Media query para móviles */
+@media (max-width: 430px) {
+  .container {
+    width: 70%;
+  }
+
+  .title {
+    font-size: 2.5vh;
+  }
+}

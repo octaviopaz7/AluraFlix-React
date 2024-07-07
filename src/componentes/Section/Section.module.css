@@ -1,0 +1,68 @@
+.section {
+  margin-bottom: 5vh;
+}
+
+.cardsContainer {
+  display: flex;
+  overflow-y: auto; /* Habilita el scroll vertical */
+  gap: 4vw; 
+  margin-left: 2vw;
+}
+
+.cardsContainer > * {
+  flex: 0 0 calc(33vw - 4vw); /* Ajusta el tamaño de cada tarjeta */
+}
+
+.cardsContainer::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+.cardsContainer::-webkit-scrollbar-thumb {
+  background: #0056b3; /* Color del thumb del scrollbar */
+  border-radius: 4px; /* Borde del thumb */
+}
+
+.cardsContainer::-webkit-scrollbar-thumb:hover {
+  background: #2271D12B; /* Color del thumb al pasar el mouse */
+}
+
+
+/* Media query para tablets */
+@media (max-width: 1024px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+  }
+
+  .cardsContainer  {
+    box-sizing: border-box;
+    margin-left: 1vw;
+  }
+  .cardsContainer > * {
+    flex: 0 0 calc(50vw - 4vw); /* Ajusta el tamaño de cada tarjeta para mostrar 2 en vez de 3 */
+  }
+
+
+  .cardsContainer::-webkit-scrollbar {  
+    background-color: black;
+  }
+}
+
+/* Media query para móviles */
+@media (max-width: 430px) {
+  .section{
+    align-items: start;
+    margin: 0 4.5vw;
+  }
+
+  .cardsContainer {
+    width: 100%;  
+  }
+
+  .cardsContainer > * {
+    flex: 0 0 calc(100vw - 9.5vw); /* Ajusta el tamaño de cada tarjeta para mostrar 1 en vez de 2 */
+  }
+}
+

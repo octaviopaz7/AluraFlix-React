@@ -1,0 +1,131 @@
+.bannerStyled {
+  background: url("/img/Banner.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.card {
+  width: 90%;
+  height: 50%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw;
+  gap: 4vw;
+}
+
+.cardContentLeft {
+  color: #fff;
+  width: 50%;
+  margin-left: 2vw;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardContentRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 50%;
+  margin-right: 2vw;
+  border: 5px solid;
+  border-radius: 20px;
+  box-shadow: 0px 0px 17px 8px #6BD1FF ;
+}
+
+.cardTitle {
+  display: inline-flex;
+  align-content: center;
+  height: 8vh;
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.titleContainer {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 0px 20px;
+}
+
+.h2Challenge {
+  font-size: 5vh;
+  margin: 10px 0 0 0;
+}
+
+.cardImageLink {
+  display: block;
+  width: 100%;
+  height: 40vh;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto; /* Ajusta la altura automáticamente */
+  max-height: 40vh; /* Limita la altura máxima */
+  border-radius: 15px;
+}
+
+
+/*AQUI COMIENZAN LAS MEDIA QUERY*/
+
+/* Media query para tablets */
+@media (max-width: 1280px) {
+  .cardContentLeft {
+   display: flex;
+   align-items: flex-start;
+  }
+
+  .cardContentRight, .cardContentLeft, .cardImageLink, .cardImage {
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .bannerStyled{
+    height: 40vh;
+  }
+
+  .cardContentLeft {
+   display: flex;
+   align-items: flex-start;
+  }
+  
+  .cardTitle {
+    height: 4vh;
+    font-size: 2vh;
+    margin-bottom: 0.5vh;
+  }
+
+  .h2Challenge {
+    font-size: 3vh;
+  }
+
+}
+
+@media (max-width: 430px) {
+  .bannerStyled{
+   display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  .bannerStyled{
+    height: 70vh;
+  }
+
+  .cardTitle {
+    height: 8vh;
+    font-size: 4vh;
+  }
+
+  .h2Challenge {
+    font-size: 4vh;
+  }
+
+}
