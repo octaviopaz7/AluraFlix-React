@@ -3,7 +3,7 @@ import Banner from "../../componentes/Banner/Banner";
 import Header from "../../componentes/Header/Header";
 import Footer from "../../componentes/Footer/Footer";
 import Section from "../../componentes/Section/Section";
-import axios from "axios";
+import api from "../../api/api";
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/videos');
+        const response = await api.get('/videos');
         if (response.status === 200) {
           setVideos(response.data);
         } else {
@@ -23,12 +23,12 @@ const Home = () => {
     };
 
     fetchVideos();
-  }, []);
+  }, [videos]);
 
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/videos/${id}`);
+      const response = await api.delete(`/videos/${id}`);
       if (response.status === 200) {
         setVideos(videos.filter(video => video.id !== id));
         console.log('Video eliminado:', id);

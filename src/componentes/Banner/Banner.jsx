@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../api/api';
 import styles from './Banner.module.css'; 
 
 const colors = {
@@ -14,7 +14,7 @@ const Banner = () => {
   useEffect(() => {
     const fetchVideo = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/videos');
+        const response = await api.get('/videos');
         const videos = response.data;
         if (Array.isArray(videos) && videos.length > 0) {
           const firstVideo = videos[0];

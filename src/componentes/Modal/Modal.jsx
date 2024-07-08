@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './Modal.module.css';
-import axios from 'axios';
+import api from '../../api/api';
 
 const Modal = ({ show, onClose, onSave, videoData }) => {
   const [video, setVideo] = useState(videoData);
@@ -32,7 +32,7 @@ const Modal = ({ show, onClose, onSave, videoData }) => {
     e.preventDefault();
     if (!validateFields()) return;
     try {
-      const response = await axios.put(`http://localhost:3000/videos/${video.id}`, video);
+      const response = await api.put(`/videos/${video.id}`, video);
       if (response.status === 200) {
         onSave(response.data);
         onClose();

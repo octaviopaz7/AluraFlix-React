@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../componentes/Header/Header';
 import Footer from '../../componentes/Footer/Footer';
 import styles from './NuevoVideo.module.css';
-import axios from 'axios';
+import api from '../../api/api';
 
 const NuevoVideo = () => {
   const [video, setVideo] = useState({
@@ -21,7 +21,7 @@ const NuevoVideo = () => {
   useEffect(() => {
     const fetchNextId = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/videos');
+        const response = await api.get('/videos');
         const videos = response.data;
         const maxId = videos.reduce((max, video) => Math.max(max, parseInt(video.id, 10)), 0);
         setNextId((maxId + 1).toString());
@@ -59,7 +59,7 @@ const NuevoVideo = () => {
     if (!validateFields()) return;
     try {
       const newVideo = { ...video, id: nextId };
-      const response = await axios.post('http://localhost:3000/videos', newVideo, {
+      const response = await api.post('/videos', newVideo, {
         headers: {
           'Content-Type': 'application/json'
         }
